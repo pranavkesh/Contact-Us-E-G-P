@@ -88,6 +88,8 @@
         $(document).ready(function () {
             $("#con_name").focus();
             $("#con_btnsave").click(function () {
+                // validate mobile number
+                var regex = /^(0|91)?[6-9][0-9]{9}$/;
                 var status = true;
                 //validation start
                 var name, mob, email, message;
@@ -115,8 +117,7 @@
                 }
 
                 
-                // validate mobile number
-                var regex = /^(0|91)?[6-9][0-9]{9}$/;
+                
                 if (mob.length == 0) {
                     $("#con_mob").after("<span class='err'>Please enter valid mobile number.</span>");
                     status = false;
